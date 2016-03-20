@@ -39,6 +39,8 @@ group :development, :test do
 
   #test
   gem "minitest-rails"
+  gem "shoulda-context"
+  gem "shoulda-matchers"
 end
 
 group :development do

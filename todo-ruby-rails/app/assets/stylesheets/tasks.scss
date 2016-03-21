@@ -10,38 +10,21 @@
   background-color: $brand-primary;
 }
 
-// .g-left {
-//   left: 0;
-//   width: 260px;
-// }
-
 .g-left, .g-right {
   height: 100%;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-// .g-center, .g-left, .g-right, .tool-bar .indicator {
-//   position: absolute;
-//   top: 0;
-// }
-
 .tasks, .tl-body {
-  // height: 100%;
+  height: 100%;
 }
 
 .g-center {
   background-color: $white;
 }
 
-// .g-center {
-//   left: 260px;
-//   right: 36%;
-// }
-
 .g-right {
-  // right: 0;
-  // width: 36%;
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
@@ -50,7 +33,6 @@
 }
 
 .tl-bar {
-  // position: absolute;
   z-index: 1;
   border-bottom: 3px solid transparent;
   -webkit-transition: border-color .5s ease-in-out;

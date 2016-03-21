@@ -1,0 +1,173 @@
+<div id="container-main" class="container-fluid">
+  <div class="row row-fluid">
+    <!-- left view start -->
+    <div id="left-view" class="col-xs-2 g-left">
+    </div>
+    <!-- left view end-->
+
+    <!--center view start-->
+    <div id="center-view" class="col-xs-5">
+      <div id="task-list-view" class="tasks ">
+        <div class="tl-bar">
+          <div id="task-list-top" class="tl-project row">
+            <div id="project-name-bar" class="line-left col-xs-9">
+              <h5 class="text-primary tl-des select-enabled">All</h5>
+            </div> 
+            <div id="task-action-bar" class="line-right col-xs-3">
+              <div id="dropdown-title" class="tl-bar-action dropdown pull-right">
+                <a title="Sort" id="sort-by" class="dropdown-toggle inline-block action-btn boult" data-toggle="dropdown">
+                  <svg class="icon-sort-by-duedate i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-duedate"></use></svg>
+                </a>
+                <div class="dropdown-menu pull-right">
+                  <li class="">
+                    <a title="Sort by List" id="sortByProject" class="sort-by">
+                        <svg class="icon-sort-by-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-list"></use></svg>
+                        By List
+                    </a>
+                  </li>
+                  
+                  <li class="active">
+                    <a title="Sort by Due date" id="sortByDueDate" class="sort-by">
+                        <svg class="icon-sort-by-duedate i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-duedate"></use></svg>
+                        By Due Date
+                    </a>
+                  </li>
+                  
+                  <li class="">
+                    <a title="Sort by Title" id="sortByTitle" class="sort-by">
+                      <svg class="icon-sort-by-title i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-title"></use></svg>
+                      By Title
+                    </a>
+                  </li>
+                  
+                  <li class="">
+                    <a title="Sort by Priority" id="sortByPriority" class="sort-by">
+                      <svg class="icon-sort-by-priority i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-priority"></use></svg>
+                      By Priority
+                    </a>
+                  </li>
+                </div>
+              </div>
+              <div class="tl-bar-action dropdown pull-right">
+                <a title="More" class="dropdown-toggle boult" data-toggle="dropdown">
+                  <svg class="icon-more i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-more"></use></svg>
+                </a>
+                <div class="dropdown-menu pull-right">
+                  <li class="completed_tasks ">
+                    <a title="Completed Tasks" id="completed_tasks" class="completed-status">
+                        <svg class="icon-completed-list-view i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-completed-list-view"></use></svg>
+                        <span class="text">Hide Completed</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="print">
+                        <svg class="icon-print i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-print"></use></svg>
+                        Print
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div id="add-task" class="tl-quick">
+            <input type="text" class="task-new input-lrg typeahead" placeholder="Add Task to &quot;Inbox&quot;">
+            <div id="task-copy" class="tl-q-copy">
+              <span class="symbol"></span>
+              <div id="task-auto-complete"></div>
+            </div>
+            <div class="preset tl-q-preset">
+              <div class="preset-time">
+                <a>
+                  <span class="icons">  
+                      <svg class="icon-duedate i-2-1 fast-transition normal-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-duedate"></use></svg>
+                      <svg class="icon-after-duedate i-2 active-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-after-duedate"></use></svg>
+                  </span>
+                  <span class="selected-title text-tny i-2"></span>
+                </a>
+              </div>
+              <div class="preset-priority dropdown">
+              <a data-toggle="dropdown" class="boult">
+                <svg class="icon-priority-3 i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+              </a>
+                <ul class="dropdown-menu priority-menu pull-right">
+                    <li>
+                      <a class="priority" value="5">
+                        <svg class="icon-priority-3 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+                        High
+                      </a>
+                    </li>
+                    <li>
+                      <a class="priority" value="3">
+                        <svg class="icon-priority-2 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-2"></use></svg>
+                        Medium
+                      </a>
+                    </li>
+                    <li>
+                      <a class="priority" value="1">
+                        <svg class="icon-priority-1 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-1"></use></svg>
+                        Low
+                      </a>
+                    </li>
+                    <li>
+                      <a class="priority" value="0">
+                        <svg class="icon-priority-3 i-4-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+                        None
+                      </a>
+                    </li>
+                </ul>
+              </div>
+              <div class="preset-list dropdown">
+                <a data-toggle="dropdown" class="boult">
+                  <svg class="icon-move-list i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-move-list"></use></svg>
+                </a>
+                <div class="menu-ul">
+                  <div class="dropdown-menu project-dropdown-menu i-text-i">
+                    <ul class="antiscroll-inner">
+                      <li class="active">
+                        <a projectid="inbox113744619" class="project-item">
+                          <svg class="icon-normal-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-normal-list"></use></svg>Inbox
+                        </a>
+                      </li>
+                    
+                      <li class="">
+                        <a projectid="56ec14f0e4b0839bb1933d46" class="project-item">
+                          <svg class="icon-normal-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-normal-list"></use></svg>ttttt
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="task-list-body" class="tl-body">
+
+        </div>
+      </div>
+    </div>
+    <!--center view end-->
+
+    <!-- tkcalendar view start -->
+    <div id="tkcalendar-view" class="tkcalendar-view"></div>
+    <!-- tkcalendar view end-->
+
+    <!-- right view start -->
+    <div id="right-view" class="col-xs-5 g-right">
+      <a id="right-menu" class="right-menu-t"></a>
+      <div id="detail-view" class="b-h"></div>
+    </div>
+    <!-- right view end -->
+  </div>
+
+  <!-- reminders modal-->
+  <div id="reminders-modal">
+    <ul class="reminders"></ul>
+  </div>
+  <!-- /reminders modal-->
+
+  <a id="left-menu" class="left-menu-t">
+    <span></span>
+  </a>
+</div>

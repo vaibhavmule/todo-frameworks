@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('.navbar-toggle').click ->
+    $('.navbar-nav').toggleClass 'slide-in'
+    $('.side-body').toggleClass 'body-slide-in'
+    $('#search').removeClass('in').addClass('collapse').slideUp 200
+    #/ uncomment code for absolute positioning tweek see top comment in css
+    #$('.absolute-wrapper').toggleClass('slide-in');
+    return
+  # Remove menu for searching
+  $('#search-trigger').click ->
+    $('.navbar-nav').removeClass 'slide-in'
+    $('.side-body').removeClass 'body-slide-in'
+    #/ uncomment code for absolute positioning tweek see top comment in css
+    #$('.absolute-wrapper').removeClass('slide-in');
+    return
+  return
+  

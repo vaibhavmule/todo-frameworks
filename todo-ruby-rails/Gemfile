@@ -41,6 +41,7 @@ group :development, :test do
   gem "minitest-rails"
   gem "shoulda-context"
   gem "shoulda-matchers"
+  gem 'pry-rails'
 end
 
 group :development do
@@ -50,4 +51,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record
+gem 'friendly_id'
+
+# JSON
+gem 'active_model_serializers'
 

@@ -1,35 +1,254 @@
-<!-- navigation panel -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="row row-fluid">
+  <!-- uncomment code for absolute positioning tweek see top comment in css -->
+  <!-- <div class="absolute-wrapper"> </div> -->
+  <!-- Menu -->
+  <div class="side-menu">
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="brand-wrapper">
+          <!-- Hamburger -->
+          <button type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Brand -->
+          <div class="brand-name-wrapper">
+            <a class="navbar-brand" href="#">
+              TODO
+            </a>
+          </div>
+
+          <!-- Search -->
+          <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+            <span class="glyphicon glyphicon-search"></span>
+          </a>
+
+          <!-- Search body -->
+          <div id="search" class="panel-collapse collapse">
+            <div class="panel-body">
+              <form class="navbar-form" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Menu -->
+      <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+
+          <li id="allList"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> All <span id="allCount" class="count"></span></a></li>
+          <li id="inboxList"><a id="clickInbox" href="#"><span class="glyphicon glyphicon-inbox"></span> Inbox <span id="inboxCount" data-project-id="inbox" class="count"></span></a></li>
+
+          <!-- Dropdown-->
+          <li class="panel panel-default" id="dropdown">
+            <a data-toggle="collapse" href="#dropdown-lvl1">
+              <span class="glyphicon glyphicon-list-alt"></span> List <span class="caret"></span>
+            </a>
+
+            <!-- Dropdown level 1 -->
+            <div id="dropdown-lvl1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="nav navbar-nav">
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+
+                  <!-- Dropdown level 2 -->
+                  <li class="panel panel-default" id="dropdown">
+                    <a data-toggle="collapse" href="#dropdown-lvl2">
+                      <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
+                    </a>
+                    <div id="dropdown-lvl2" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                          <li><a href="#">Link</a></li>
+                          <li><a href="#">Link</a></li>
+                          <li><a href="#">Link</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> Create list</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-check"></span> Completed</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-trash"></span> Trash</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
+
+  <!-- Main Content -->
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">TODO</a>
+    <div class="side-body row-fluid">
+      <div class="row row-fluid">
+       <!--center view start-->
+        <div id="center-view" class="col-xs-7">
+          <div id="task-list-view" class="tasks ">
+            <div class="tl-bar">
+              <div id="task-list-top" class="tl-project row">
+                <div id="project-name-bar" class="line-left col-xs-9">
+                  <h5 class="text-primary tl-des select-enabled">All</h5>
+                </div> 
+                <div id="task-action-bar" class="line-right col-xs-3">
+                  <div id="dropdown-title" class="tl-bar-action dropdown pull-right">
+                    <a title="Sort" id="sort-by" class="dropdown-toggle inline-block action-btn boult" data-toggle="dropdown">
+                      <svg class="icon-sort-by-duedate i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-duedate"></use></svg>
+                    </a>
+                    <div class="dropdown-menu pull-right">
+                      <li class="">
+                        <a title="Sort by List" id="sortByProject" class="sort-by">
+                            <svg class="icon-sort-by-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-list"></use></svg>
+                            By List
+                        </a>
+                      </li>
+                      
+                      <li class="active">
+                        <a title="Sort by Due date" id="sortByDueDate" class="sort-by">
+                            <svg class="icon-sort-by-duedate i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-duedate"></use></svg>
+                            By Due Date
+                        </a>
+                      </li>
+                      
+                      <li class="">
+                        <a title="Sort by Title" id="sortByTitle" class="sort-by">
+                          <svg class="icon-sort-by-title i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-title"></use></svg>
+                          By Title
+                        </a>
+                      </li>
+                      
+                      <li class="">
+                        <a title="Sort by Priority" id="sortByPriority" class="sort-by">
+                          <svg class="icon-sort-by-priority i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort-by-priority"></use></svg>
+                          By Priority
+                        </a>
+                      </li>
+                    </div>
+                  </div>
+                  <div class="tl-bar-action dropdown pull-right">
+                    <a title="More" class="dropdown-toggle boult" data-toggle="dropdown">
+                      <svg class="icon-more i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-more"></use></svg>
+                    </a>
+                    <div class="dropdown-menu pull-right">
+                      <li class="completed_tasks ">
+                        <a title="Completed Tasks" id="completed_tasks" class="completed-status">
+                            <svg class="icon-completed-list-view i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-completed-list-view"></use></svg>
+                            <span class="text">Hide Completed</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="print">
+                            <svg class="icon-print i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-print"></use></svg>
+                            Print
+                        </a>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div id="add-task" class="tl-quick">
+                <input type="text" class="task-new input-lrg typeahead" placeholder="Add Task to &quot;Inbox&quot;">
+                <div id="task-copy" class="tl-q-copy">
+                  <span class="symbol"></span>
+                  <div id="task-auto-complete"></div>
+                </div>
+                <div class="preset tl-q-preset">
+                  <div class="preset-time">
+                    <a>
+                      <span class="icons">  
+                          <svg class="icon-duedate i-2-1 fast-transition normal-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-duedate"></use></svg>
+                          <svg class="icon-after-duedate i-2 active-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-after-duedate"></use></svg>
+                      </span>
+                      <span class="selected-title text-tny i-2"></span>
+                    </a>
+                  </div>
+                  <div class="preset-priority dropdown">
+                  <a data-toggle="dropdown" class="boult">
+                    <svg class="icon-priority-3 i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+                  </a>
+                    <ul class="dropdown-menu priority-menu pull-right">
+                        <li>
+                          <a class="priority" value="5">
+                            <svg class="icon-priority-3 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+                            High
+                          </a>
+                        </li>
+                        <li>
+                          <a class="priority" value="3">
+                            <svg class="icon-priority-2 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-2"></use></svg>
+                            Medium
+                          </a>
+                        </li>
+                        <li>
+                          <a class="priority" value="1">
+                            <svg class="icon-priority-1 "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-1"></use></svg>
+                            Low
+                          </a>
+                        </li>
+                        <li>
+                          <a class="priority" value="0">
+                            <svg class="icon-priority-3 i-4-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-priority-3"></use></svg>
+                            None
+                          </a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="preset-list dropdown">
+                    <a data-toggle="dropdown" class="boult">
+                      <svg class="icon-move-list i-2-1 fast-transition"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-move-list"></use></svg>
+                    </a>
+                    <div class="menu-ul">
+                      <div class="dropdown-menu project-dropdown-menu i-text-i">
+                        <ul class="antiscroll-inner">
+                          <li class="active">
+                            <a projectid="inbox113744619" class="project-item">
+                              <svg class="icon-normal-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-normal-list"></use></svg>Inbox
+                            </a>
+                          </li>
+                        
+                          <li>
+                            <a projectid="56ec14f0e4b0839bb1933d46" class="project-item">
+                              <svg class="icon-normal-list i-3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-normal-list"></use></svg>ttttt
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="task-list-body" class="tl-body">
+
+            </div>
+          </div>
+        </div>
+        <!--center view end-->
+
+        <!-- tkcalendar view start -->
+        <!-- <div id="tkcalendar-view" class="col-xs- tkcalendar-view"></div> -->
+        <!-- tkcalendar view end-->
+
+        <!-- right view start -->
+        <div id="right-view" class="col-xs-5 g-right">
+          <a id="right-menu" class="right-menu-t"></a>
+          <div id="detail-view" class="b-h"></div>
+        </div>
+        <!-- right view end -->
+      </div>
     </div>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse-main">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Tasks", tasks_path%></li>
-        <!-- <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#information">Information</a></li>
-        <li><a href="#google_map">Contact</a></li>
-        <li><a href="">Login</a></li> -->
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<!-- first section - Home -->
-<div id="home" class="home">
-  <div class="text-vcenter">
-    <h1>Hello Todo</h1>
-    <h3>This is todo app on ruby rails and bootstrap</h3>
   </div>
 </div>
-<!-- /first section -->

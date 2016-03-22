@@ -2,7 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: "inbox"
+  slug: 'inbox'
 
 two:
   name: MyString
+  slug: 'MyString'

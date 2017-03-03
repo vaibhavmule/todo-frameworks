@@ -5,10 +5,20 @@ allLoad = () ->
     url: '/projects'
     dataType: 'json'
     success: (data) ->
-      console.log(data)
       $.each data, (key, value) ->
         allTasksCount += value.tasks_count
-      $('#allCount').html(allTasksCount)
+      if (allTasksCount > 0)
+        $('#allCount').html(allTasksCount)
+        # $("task-list-body").html("<div id='tabs'></div>")
+        # $.each data, (key, value) ->
+        #   tabKey = 'tabs-' + key
+        #   $("#{tabs}").html("<div id='" + tabKey + "'></div")
+        #   tabKeyId = "#" + tabKey 
+        #   $(tabKeyId).html()
+      else
+        $("task-list-body").html("<div>All tasks done. Time to relax</div>")  
+
+
 
 inboxLoad = () ->
   projectName = $('#inboxCount').data('projectId')

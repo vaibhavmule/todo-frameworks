@@ -14,4 +14,6 @@ $ ->
     #$('.absolute-wrapper').removeClass('slide-in');
     return
   return
-  
+
+  $('#sortable1, #sortable2, #sortable3').sortable(connectWith: [ '.connectedSortable' ]).disableSelection()
+  $('#tabs').accordion()

@@ -1,0 +1,21 @@
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { 
+  background: $white;
+  border: none;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.ui-accordion-header{
+  color: $gray-light;
+}
+
+.ui-accordion-header.ui-state-active { 
+  background-color: $white;
+}
+
+.ui-accordion-header-icon{
+  color: $gray-light;
+}
+
+.ui-state-default{
+  padding: 10px;
+}

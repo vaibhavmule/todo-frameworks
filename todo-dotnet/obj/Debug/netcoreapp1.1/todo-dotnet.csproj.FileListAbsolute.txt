@@ -1,0 +1,8 @@
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/bin/Debug/netcoreapp1.1/todo-dotnet.deps.json
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/bin/Debug/netcoreapp1.1/todo-dotnet.runtimeconfig.json
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/bin/Debug/netcoreapp1.1/todo-dotnet.runtimeconfig.dev.json
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/bin/Debug/netcoreapp1.1/todo-dotnet.dll
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/bin/Debug/netcoreapp1.1/todo-dotnet.pdb
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/obj/Debug/netcoreapp1.1/todo-dotnet.AssemblyInfo.cs
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/obj/Debug/netcoreapp1.1/todo-dotnet.dll
+/Users/Sigma/Work/Project/todo-frameworks/todo-dotnet/obj/Debug/netcoreapp1.1/todo-dotnet.pdb

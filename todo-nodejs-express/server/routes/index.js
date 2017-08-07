@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pg = require('pg');
 const path = require('path');
-const config = require('../knexfile')
+const config = require('../../knexfile')
 const knex = require('knex');
 const argv = require('yargs')
 	.usage('Usage: $0 [options]')

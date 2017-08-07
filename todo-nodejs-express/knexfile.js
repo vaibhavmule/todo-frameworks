@@ -11,8 +11,8 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'node_todo',
-      user:     'postgres',
-      password: 'postgres'
+      user:     'Sigma',
+      password: ''
     },
     pool: {
       min: 2,

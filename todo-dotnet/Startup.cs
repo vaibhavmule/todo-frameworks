@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace todo_dotnet
 {
@@ -29,6 +30,13 @@ namespace todo_dotnet
         {
             // Add framework services.
             services.AddMvc();
+            var sqlConnectionString = Configuration.GetConnectionString("DATABASE_URL");
+            services.AddDbContext<Database.ApplicationDbContext>(options =>
+                options.UseNpgsql(
+                    sqlConnectionString,
+                    b => b.MigrationsAssembly("todo-dotnet")
+                )
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

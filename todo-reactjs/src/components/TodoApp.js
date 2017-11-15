@@ -13,11 +13,12 @@ export default class TodoApp extends Component {
 	}
 
 	handleChange = e => {
-		this.setState({
-			[e.target.name]: e.target.value
-		});
+		this.setState({[e.target.name]: e.target.value})
 	}
 
+	onEnterKeyPress = e => {
+		e.key === 'Enter' ? this.addTodoToList(this.state.todoItem) : null
+	}
 
 	addTodoToList = todo => {
 		const todoList = this.state.todoList
@@ -37,6 +38,7 @@ export default class TodoApp extends Component {
 						todo={todoItem}
 						handleChange={this.handleChange}
 						add={this.addTodoToList}
+						onEnterKeyPress={this.onEnterKeyPress}
 						/>
 					<TodoList todos={todoList}/>
 				</div>

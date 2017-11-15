@@ -8,7 +8,7 @@ import {rightMargin} from './Styles.js';
 export default class AddTodo extends Component {
 
 	render() {
-		const {todo, handleChange, add} = this.props
+		const {todo, handleChange, add, onEnterKeyPress} = this.props
 		return (
 			<div>
 			  <TextField
@@ -16,7 +16,7 @@ export default class AddTodo extends Component {
           name='todoItem'
           value={todo}
           onChange={handleChange}
-	        onKeyPress={e => {e.key === 'Enter'?add(todo):null}}
+	        onKeyPress={onEnterKeyPress}
           />
         <RaisedButton
         	style={rightMargin}

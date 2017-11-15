@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 
 import AddTodo from './AddTodo.js'
 import TodoList from './TodoList.js'
+import {rightMargin} from './Styles.js'
 
 
 export default class TodoApp extends Component {
@@ -32,13 +33,13 @@ export default class TodoApp extends Component {
 			  <AppBar
 			    title="Todo App"
 			  />
-			  <div style={{marginLeft: '2.5rem'}}>
-				<AddTodo 
-					todo={todoItem}
-					handleChange={this.handleChange}
-					add={this.addTodoToList}
-					/>
-				<TodoList todos={todoList}/>
+			  <div style={rightMargin}>
+					<AddTodo 
+						todo={todoItem}
+						handleChange={this.handleChange}
+						add={this.addTodoToList}
+						/>
+					<TodoList todos={todoList}/>
 				</div>
       </div>
 		)

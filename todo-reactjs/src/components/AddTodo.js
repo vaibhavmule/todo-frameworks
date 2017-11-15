@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import {rightMargin} from './Styles.js';
+
 
 export default class AddTodo extends Component {
 
@@ -17,7 +19,7 @@ export default class AddTodo extends Component {
 	        onKeyPress={e => {e.key === 'Enter'?add(todo):null}}
           />
         <RaisedButton
-        	style={{marginLeft: '2.5rem'}}
+        	style={rightMargin}
         	label="Add Todo"
         	primary={true}
         	onClick={() => add(todo)}/>

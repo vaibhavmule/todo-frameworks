@@ -7,9 +7,15 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+  	remove: todo => console.log(todo),
+  }
+}
 
 const TodoList = connect(
-  mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(TodoListComponent)
 
 export default TodoList

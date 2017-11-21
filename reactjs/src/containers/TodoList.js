@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
+
 import TodoListComponent from '../components/TodoList'
+import { removeTodo } from '../actions'
 
 const mapStateToProps = state => {
   return {
@@ -9,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  	remove: todo => console.log(todo),
+  	remove: todo => dispatch(removeTodo(todo)),
   }
 }
 

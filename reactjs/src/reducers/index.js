@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, MODIFY_TODO } from '../actions'
+
+import remove from 'lodash.remove'
+
+import { ADD_TODO, MODIFY_TODO, REMOVE_TODO } from '../actions'
 
 const initialState = {
   todo: '',
@@ -11,13 +14,21 @@ const todos = (state=initialState, action) => {
     case ADD_TODO:
       return Object.assign({},
         state,
-        { todos: [...state.todos, action.todo],
+        {
+          todos: [...state.todos, action.todo],
           todo: ''
         })
     case MODIFY_TODO:
       return Object.assign({},
         state,
         { todo: action.todo })
+    case REMOVE_TODO:
+      return Object.assign({},
+        state,
+        {
+          todos: remove(state.todos, action.todo),
+          todo: ''
+        })
     default:
       return state
   }

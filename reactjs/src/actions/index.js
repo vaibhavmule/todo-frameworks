@@ -2,6 +2,7 @@
 // constants
 export const ADD_TODO = 'ADD_TODO'
 export const MODIFY_TODO = 'MODIFY_TODO'
+export const REMOVE_TODO = 'REMOVE_TODO'
 
 // actions
 export const addTodo = todo => {
@@ -14,6 +15,13 @@ export const addTodo = todo => {
 export const modifyTodo = todo => {
 	return {
 		type: MODIFY_TODO,
+		todo
+	}
+}
+
+export const removeTodo = todo => {
+	return {
+		type: REMOVE_TODO,
 		todo
 	}
 }

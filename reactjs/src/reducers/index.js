@@ -23,10 +23,11 @@ const todos = (state=initialState, action) => {
         state,
         { todo: action.todo })
     case REMOVE_TODO:
+      let todos = state.todos
       return Object.assign({},
         state,
         {
-          todos: remove(state.todos, action.todo),
+          todos: remove(todos, todo => todo !== action.todo),
           todo: ''
         })
     default:

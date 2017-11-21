@@ -3,7 +3,7 @@ import {List, ListItem} from 'material-ui/List'
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
 
-const TodoListComponent = ({ todos }) => (
+const TodoListComponent = ({ todos, remove }) => (
 	<div className="center">
 	  <List className="width">
 	    {todos.map(item => (
@@ -11,7 +11,8 @@ const TodoListComponent = ({ todos }) => (
 					key={item}
 					rightIconButton={
 						<IconButton
-        			tooltip="delete">
+        			tooltip="delete"
+        			onClick={() => remove(item)}>
         			<Delete />
         		</IconButton>
 					}

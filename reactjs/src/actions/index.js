@@ -4,6 +4,7 @@ import uuidv4 from 'uuid/v4'
 export const ADD_TODO = 'ADD_TODO'
 export const MODIFY_TODO = 'MODIFY_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
 
 // actions
 export const addTodo = todo => {
@@ -24,6 +25,13 @@ export const modifyTodo = todo => {
 export const removeTodo = id => {
 	return {
 		type: REMOVE_TODO,
+		id
+	}
+}
+
+export const toggleTodo = id => {
+	return {
+		type: TOGGLE_TODO,
 		id
 	}
 }

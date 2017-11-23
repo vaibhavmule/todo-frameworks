@@ -15,7 +15,11 @@ const todos = (state=initialState, action) => {
       return Object.assign({},
         state,
         {
-          todos: [...state.todos, action.todo],
+          todos: [...state.todos, {
+            id: action.id,
+            todo: action.todo,
+            completed: false
+          }],
           todo: ''
         })
     case MODIFY_TODO:
@@ -27,7 +31,7 @@ const todos = (state=initialState, action) => {
       return Object.assign({},
         state,
         {
-          todos: remove(todos, todo => todo !== action.todo),
+          todos: remove(todos, todo => todo.id !== action.id),
           todo: ''
         })
     default:

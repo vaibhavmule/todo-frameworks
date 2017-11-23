@@ -1,23 +1,23 @@
 import React from 'react'
 import {List, ListItem} from 'material-ui/List'
 import IconButton from 'material-ui/IconButton';
-import Delete from 'material-ui/svg-icons/action/delete';
+import Close from 'material-ui/svg-icons/navigation/close';
 
 const TodoListComponent = ({ todos, remove }) => (
 	<div className="center">
 	  <List className="width">
-	    {todos.map(item => (
-				<ListItem 
-					key={item}
+	    {todos.map(todo => (
+				<ListItem
+					key={todo.id}
 					rightIconButton={
 						<IconButton
         			tooltip="delete"
-        			onClick={() => remove(item)}>
-        			<Delete />
+        			onClick={() => remove(todo.id)}>
+        			<Close />
         		</IconButton>
 					}
 					>
-					{item}
+					{todo.todo}
 				</ListItem>
 	    ))}
 	  </List>

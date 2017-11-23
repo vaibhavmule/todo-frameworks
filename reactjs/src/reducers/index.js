@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 
 import remove from 'lodash.remove'
 
-import { ADD_TODO, MODIFY_TODO, REMOVE_TODO } from '../actions'
+import { ADD_TODO, MODIFY_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions'
 
 const initialState = {
   todo: '',
@@ -27,6 +27,16 @@ const todos = (state=initialState, action) => {
         state,
         { todo: action.todo })
     case REMOVE_TODO:
+      return Object.assign({},
+        state,
+        {
+          todos: todos.map(todo => 
+            todo.id === action.id 
+            ? {...todo, completed: !todo.completed}
+            : todo),
+          todo: ''
+        })
+    case TOGGLE_TODO:
       let todos = state.todos
       return Object.assign({},
         state,

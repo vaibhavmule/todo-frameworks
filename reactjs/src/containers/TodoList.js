@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  	remove: todo => dispatch(removeTodo(todo)),
+  	remove: id => dispatch(removeTodo(id)),
   }
 }
 
